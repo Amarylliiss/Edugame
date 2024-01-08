@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0" />
+        <title>Puzzle | FunFeels</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <link type="text/css" href="css/puzzle.css" rel='stylesheet' >
+
+    </head>
+    
+    <body>
+        <header class ="header">
+            <a href="" class="logo">Logo</a>
+    
+            <nav class="navbar">
+                <a href="/">Wroć</a>
+            </nav>
+        </header>
+
+<div>
+    <h2 id="emotion-title"></h1>
+    <div id="puzzle-container">
+        <div id="drop-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="image-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <button onclick="checkPuzzle()">Sprawdź</button>
+
+    <div id="message" style="display: none;"></div>
+</div>
+<script src ="/js/puzzle.js"></script>
+
+</body>
+</html>

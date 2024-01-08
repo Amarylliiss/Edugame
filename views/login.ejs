@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0" />
+    <title>Logowanie | FunFeels</title>
+    <link type="text/css" href="css/login.css" rel='stylesheet' >
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="/auth" method="post">
+            <h1>Logowanie</h1>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="E-mail" id="email" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Hasło" id="password" required>
+                <i class='bx bx-lock' ></i>
+            </div>
+            <div class="remember-forgot"> 
+               
+                <a href ="#"> Nie pamiętasz hasła?</a>
+            </div>
+            <button type ="submit" class="btn">Zaloguj się </button>
+
+            <div class="register-link">
+                <p>Nie masz konta? <a href ="register">Rejestracja</a></p>
+            </div>
+            <% if (locals.error) { %>
+                <div class="error-message">
+                <p><i class="fas fa-exclamation-circle"></i>&nbsp;<%= locals.error %></p>
+            <% } %>
+        </form>
+    </div>
+</body>
+</html>

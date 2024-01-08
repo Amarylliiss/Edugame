@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona główna | FunFeels</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="" class="logo">Logo</a>
+
+        <nav class="navbar">
+            
+            <% if (!user) { %>
+                <a href="auth">Zaloguj</a>
+                <a href="register">Zarejestruj</a>
+            <% } else { %>
+            <h3>Witaj, <%= user.username %> !</h3>
+            <a href="#parallax">Strona domowa</a>
+            <a href="#games">Gry</a>
+            <a href="profile">Profil</a>
+            <a href="/logout">Wyloguj</a>
+            <% } %>
+            
+        </nav>
+        <div class="burger-menu" onclick="toggleNavbar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+       
+    </header>
+
+
+    <section id="parallax" class="parallax" style="background-image: url('/images/20.jpg');">
+        <div class="parallax-content">
+            <h1>Witaj w FunFeels!</h1>
+            <p>Odkryj świat zabawy i emocji.</p>
+        </div>
+    </section>
+
+    
+    <section id="games" class="games">
+        <h2>Odkryj Nasze Gry</h2>
+        <div class="card-container">
+            <a href="quiz" class="card">
+                <img src="images/quiz.png"
+                alt="balloon with an emoji face" class="card__img">
+            <span class="card__footer">
+                <span>Quiz "Co to za emocja"</span>
+
+            </span>
+            <span class="card__action">
+                <svg viewBox="0 0 448 512" title="play">
+                    <path
+                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                </svg>
+            </span>
+            </a>
+            <a href="memory" class="card">
+                <img src="images/memory.png"
+                alt="balloon with an emoji face" class="card__img">
+            <span class="card__footer">
+                <span>Gra pamięciowa</span>
+            </span>
+            <span class="card__action">
+                <svg viewBox="0 0 448 512" title="play">
+                    <path
+                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                </svg>
+            </span>
+            </a>
+            <a href="emojimaker" class="card">
+                <img src="images/emotki.png"
+                alt="balloon with an emoji face" class="card__img">
+            <span class="card__footer">
+                <span>Stworz swoją własną emotkę</span>
+            </span>
+            <span class="card__action">
+                <svg viewBox="0 0 448 512" title="play">
+                    <path
+                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                </svg>
+            </span>
+            </a>
+            <a href="puzzle" class="card">
+                <img src="images/puzzle.png"
+                alt="balloon with an emoji face" class="card__img">
+            <span class="card__footer">
+                <span>Puzzle</span>
+            </span>
+            <span class="card__action">
+                <svg viewBox="0 0 448 512" title="play">
+                    <path
+                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                </svg>
+            </span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 FunFeels. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+});
+</script>
+</body>
+</html>

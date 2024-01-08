@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ustawienia profilu | FunFeels</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+
+    <link type="text/css" href="css/login.css" rel='stylesheet'>
+
+</head>
+
+
+<body>
+   
+    <div class="container-profile">
+        <% if (successMessage) { %>
+            <p class="success-message"><%= successMessage %></p>
+        <% } %>
+
+        <% if (errorMessage) { %>
+            <p class="error-message"><%= errorMessage %></p>
+        <% } %>
+        <h2>Ustawienia Profilu Użytkownika</h2>
+        <form action="/updateProfile" method="post">
+            <div class="form-group">
+                <label for="newUsername">Nowa Nazwa Użytkownika:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Nowe hasło:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <button type="submit">Zapisz</button>
+        </form>
+    </div>
+</body>
+
+</html>
